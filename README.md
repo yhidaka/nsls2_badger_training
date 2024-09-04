@@ -111,3 +111,15 @@
 - If you select `expected improvement` as an algorithm, you must add initial points. Otherwise, it will fail.
 
 - Every time you modify something in the folder "nsls2_training", you probably need to re-launch Badger for the changes to take effect.
+
+## Miscellaneous Comments
+
+- Badger has been changing quite a lot. Hopefully, after passing the version 1 milestone, there will be no significant change any more. But I cannot guarantee that the way described in this training will not break soon.
+
+- For each of your optimization problems, you need to create a new Badger environment. You can just copy the example environment `nsls2_training` we used for the training, and modify the two files `knobs.py` and `evaluator.py`.
+
+  - `knobs.py`:
+    - Only modify the section above the comment line `# ----------- Only modify above -----------`
+
+  - `evaluator.py`:
+    - Cannot use `cothread` with Badger. Use `pyepics` instead.
